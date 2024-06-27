@@ -1,8 +1,9 @@
-/*@Author Hina Hussain Created Date 5-May-2021*/
+/* @Author Dennis Cai - Created 27-06-2024 */
 package com.creativemind.open_apps_settings;
 
-public class RequestCodes {
+import java.lang.reflect.Field;
 
+public class RequestCodes {
     public static final int APP_DETAIL_SETTINGS = 101;
     public static final int GENERAL_SETTINGS = 102;
     public static final int WIFI_SETTINGS = 103;
@@ -31,4 +32,18 @@ public class RequestCodes {
     public static final int SOUND_SETTINGS = 126;
     public static final int NOTIFICATION_SETTINGS = 127;
 
+    public static boolean doesValueExist(int value) {
+        Field[] fields = RequestCodes.class.getDeclaredFields();
+
+        for (Field field : fields) {
+            try {
+                if (field.getInt(null) == value) {
+                    return true;
+                }
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
 }

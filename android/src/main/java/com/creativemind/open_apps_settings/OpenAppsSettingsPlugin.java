@@ -1,4 +1,4 @@
-/*@Author Hina Hussain Created Date 5-May-2021*/
+/* @Author Dennis Cai - Created 27-06-2024 */
 package com.creativemind.open_apps_settings;
 
 import android.app.Activity;
