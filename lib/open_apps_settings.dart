@@ -1,10 +1,8 @@
-/*@Author Hina Hussain on 5-May-2021
-* */
+/* @Author Dennis Cai on 27-06-2024 */
 
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'settings_enum.dart';
-/* @Autor Hina Hussain */
 
 /// An [OpenAppsSettings] class is responsible for Opening settings pages for the application.
 
