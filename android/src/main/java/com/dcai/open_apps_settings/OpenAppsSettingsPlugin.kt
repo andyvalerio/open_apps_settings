@@ -19,22 +19,22 @@ import io.flutter.plugin.common.PluginRegistry.ActivityResultListener
 /**
  * OpenAppsSettingsPlugin
  */
-class OpenAppsSettingsPlugin
-
-    : FlutterPlugin, MethodCallHandler, ActivityResultListener, ActivityAware {
-    /// The MethodChannel that will the communication between Flutter and native
-    /// Android
+class OpenAppsSettingsPlugin :
+    FlutterPlugin,
+    MethodCallHandler,
+    ActivityResultListener,
+    ActivityAware {
+    /// The MethodChannel that will handle the communication between Flutter and native Android.
     ///
-    /// This local reference serves to register the plugin with the Flutter Engine
-    /// and unregister it
-    /// when the Flutter Engine is detached from the Activity
+    /// This local reference serves to register the plugin with the Flutter Engine and unregister it
+    /// when the Flutter Engine is detached from the Activity.
     private var channel: MethodChannel? = null
     private var activity: Activity? = null
     private var pendingResult: MethodChannel.Result? = null
 
     override fun onAttachedToEngine(flutterPluginBinding: FlutterPluginBinding) {
         channel = MethodChannel(flutterPluginBinding.binaryMessenger, "open_apps_settings")
-        channel!!.setMethodCallHandler(this)
+        channel?.setMethodCallHandler(this)
     }
 
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
@@ -200,7 +200,7 @@ class OpenAppsSettingsPlugin
     }
 
     override fun onDetachedFromEngine(binding: FlutterPluginBinding) {
-        channel!!.setMethodCallHandler(null)
+        channel?.setMethodCallHandler(null)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
