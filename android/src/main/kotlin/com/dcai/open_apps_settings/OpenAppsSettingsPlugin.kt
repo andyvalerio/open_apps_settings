@@ -31,6 +31,7 @@ class OpenAppsSettingsPlugin :
     private var channel: MethodChannel? = null
     private var activity: Activity? = null
     private var pendingResult: MethodChannel.Result? = null
+    private var pendingRequestCode: Int? = null
 
     override fun onAttachedToEngine(flutterPluginBinding: FlutterPluginBinding) {
         channel = MethodChannel(flutterPluginBinding.binaryMessenger, "open_apps_settings")
@@ -207,13 +208,17 @@ class OpenAppsSettingsPlugin :
         Log.e("OpenApps", "!!!!!!!!!!!!!!!!!!!!!!!! HALLOOOO HIER BEN IK")
         Log.e("OpenApps", "requestCode: $requestCode")
 
-        if (RequestCodes.contains(requestCode)) {
+        if (requestCode == pendingRequestCode) {
             val result = pendingResult
             pendingResult = null
+            pendingRequestCode = null
 
             if (result != null) {
+                Log.e("OpenApps", "Sending result")
                 if (resultCode == Activity.RESULT_OK) {
-                    result.success(requestCode.toString())
+                    result.success(requestCode)
+                } else {
+                    result.success(-1)
                 }
             }
             return true
@@ -243,6 +248,7 @@ class OpenAppsSettingsPlugin :
     private fun openAppSettings() {
         val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
         intent.setData(Uri.fromParts("package", activity?.packageName, null))
+        pendingRequestCode = RequestCodes.APP_DETAIL_SETTINGS
         activity?.startActivityForResult(intent, RequestCodes.APP_DETAIL_SETTINGS)
     }
 
@@ -250,6 +256,7 @@ class OpenAppsSettingsPlugin :
     private fun openSettings(intentString: String, permissionCode: Int) {
         try {
             val intent = Intent(intentString)
+            pendingRequestCode = permissionCode
             activity?.startActivityForResult(intent, permissionCode)
         } catch (e: Exception) {
             openAppSettings()
@@ -258,6 +265,8 @@ class OpenAppsSettingsPlugin :
 
     // Private method to open notification
     private fun openNotification() {
+        pendingRequestCode = RequestCodes.NOTIFICATION_SETTINGS
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val intent = Intent(Settings.ACTION_APP_NOTIFICATION_SETTINGS)
             intent.putExtra(Settings.EXTRA_APP_PACKAGE, activity?.packageName)
