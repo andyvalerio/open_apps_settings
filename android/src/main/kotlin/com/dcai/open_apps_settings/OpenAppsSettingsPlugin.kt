@@ -205,16 +205,12 @@ class OpenAppsSettingsPlugin :
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
-        Log.e("OpenApps", "!!!!!!!!!!!!!!!!!!!!!!!! HALLOOOO HIER BEN IK")
-        Log.e("OpenApps", "requestCode: $requestCode")
-
         if (requestCode == pendingRequestCode) {
             val result = pendingResult
             pendingResult = null
             pendingRequestCode = null
 
             if (result != null) {
-                Log.e("OpenApps", "Sending result")
                 if (resultCode == Activity.RESULT_OK) {
                     result.success(requestCode)
                 } else {
