@@ -27,7 +27,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.creativemind.open_apps_settings
+        package: com.dcai.open_apps_settings
         pluginClass: OpenAppsSettingsPlugin
       ios:
         pluginClass: OpenAppsSettingsPlugin
