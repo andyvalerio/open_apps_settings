@@ -7,8 +7,7 @@ import 'settings_enum.dart';
 /// An [OpenAppsSettings] class is responsible for Opening settings pages for the application.
 
 class OpenAppsSettings {
-  static const MethodChannel _channel =
-      const MethodChannel('open_apps_settings');
+  static const MethodChannel _channel = MethodChannel('open_apps_settings');
 
   ///[openAppsSettings] method is used to open settings.
   /// As a input user will specify which [settings] should be open.
@@ -20,11 +19,10 @@ class OpenAppsSettings {
   static Future<void> openAppsSettings(
       {required SettingsCode settingsCode, Function? onCompletion}) async {
     try {
-      String code = settingsCode.toString();
-      code = code.substring(13);
-      String res = await _channel
+      String code = settingsCode.toString().split('.').last;
+      int res = await _channel
           .invokeMethod("openSettings", {"setting_code": code.toLowerCase()});
-      if (res != null && res.length > 0) {
+      if (res >= 0) {
         if (onCompletion != null) onCompletion();
       }
     } on PlatformException catch (e) {
