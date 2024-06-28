@@ -147,13 +147,13 @@ class OpenAppsSettingsPlugin :
                     RequestCodes.INTERNAL_STORAGE_SETTINGS
                 )
 
-                "fingerprint_enroll" -> if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                "fingerprint_enroll" -> if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
                     openSettings(
-                        Settings.ACTION_FINGERPRINT_ENROLL,
-                        RequestCodes.FINGERPRINT_ENROL
+                        Settings.ACTION_BIOMETRIC_ENROLL,
+                        RequestCodes.BIOMETRIC_ENROLL
                     )
                 } else {
-                    result.error("NOT SUPPORTED", "Field requires API level 28 or higher", null)
+                    result.error("NOT SUPPORTED", "Field requires API level 30 or higher", null)
                 }
 
                 "locale" -> openSettings(

@@ -20,7 +20,7 @@ object RequestCodes {
     const val DISPLAY_SETTINGS: Int = 116
     const val HOME_SETTINGS: Int = 117
     const val INTERNAL_STORAGE_SETTINGS: Int = 118
-    const val FINGERPRINT_ENROL: Int = 119
+    const val BIOMETRIC_ENROLL: Int = 119
     const val LOCALE_SETTINGS: Int = 120
     const val LOCATION_SOURCE_SETTINGS: Int = 121
     const val MANAGE_ALL_APPLICATIONS_SETTINGS: Int = 122
