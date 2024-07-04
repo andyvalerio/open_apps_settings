@@ -1,11 +1,8 @@
 # open_apps_settings
 
-| :memo:        | This repository was forked from [Hina-Hussain/open_apps_settings](https://github.com/Hina-Hussain/open_apps_settings) |
-|---------------|:----------------------------------------------------------------------------------------------------------------------|
-
 A Flutter Plugin for opening phone settings from Android and iOS apps. It is a fully customizable plugin that allows you to execute functions when returning from the app setting page.
 
-This fork fixes a bug that caused the plugin to send a `result.success()` to all MethodChannels, instead of only its own.
+This fork fixes a bug in the forked repository that caused the plugin to send a `result.success()` to all MethodChannels, instead of only its own.
 
 ## Installation
 
