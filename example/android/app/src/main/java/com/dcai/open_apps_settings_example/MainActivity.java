@@ -1,4 +1,4 @@
-package com.creativemind.open_apps_settings_example;
+package com.bdrthermea.open_apps_settings_example;
 
 import io.flutter.embedding.android.FlutterActivity;
 

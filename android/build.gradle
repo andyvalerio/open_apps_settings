@@ -1,28 +1,37 @@
-group 'com.creativemind.open_apps_settings'
+group 'com.bdrthermea.open_apps_settings'
 version '1.0'
 
 buildscript {
+    ext {
+        kotlin_version = '2.0.0'
+    }
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath 'com.android.tools.build:gradle:8.5.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
-    compileSdkVersion 29
+    namespace = "com.bdrthermea.open_apps_settings"
+
+    defaultConfig {
+        compileSdk 34
+    }
 
     defaultConfig {
         minSdkVersion 16
@@ -30,4 +39,12 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+}
+
+dependencies {
+    implementation 'androidx.annotation:annotation-jvm:1.8.0'
+    implementation 'androidx.core:core-ktx:1.13.1'
 }

@@ -1,7 +1,7 @@
 name: open_apps_settings
 description: A Flutter Plugin for opening phone settings from Android and iOS apps.
-version: 0.0.4
-homepage: https://github.com/Hina-Hussain/open_apps_settings.git
+version: 0.1.0
+homepage: https://github.com/BDR-Thermea-B2B-apps/open_apps_settings
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
@@ -27,7 +27,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.creativemind.open_apps_settings
+        package: com.bdrthermea.open_apps_settings
         pluginClass: OpenAppsSettingsPlugin
       ios:
         pluginClass: OpenAppsSettingsPlugin
