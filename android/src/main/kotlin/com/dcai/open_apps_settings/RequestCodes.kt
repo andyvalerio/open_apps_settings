@@ -1,5 +1,5 @@
 /* @Author Dennis Cai - Created 27-06-2024 */
-package com.dcai.open_apps_settings
+package com.bdrthermea.open_apps_settings
 
 object RequestCodes {
     const val APP_DETAIL_SETTINGS: Int = 101

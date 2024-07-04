@@ -1,4 +1,4 @@
-group 'com.dcai.open_apps_settings'
+group 'com.bdrthermea.open_apps_settings'
 version '1.0'
 
 buildscript {
@@ -27,7 +27,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
-    namespace = "com.dcai.open_apps_settings"
+    namespace = "com.bdrthermea.open_apps_settings"
 
     defaultConfig {
         compileSdk 34
