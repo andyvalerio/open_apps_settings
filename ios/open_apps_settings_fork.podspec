@@ -3,7 +3,7 @@
 # Run `pod lib lint open_apps_settings.podspec' to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'open_apps_settings'
+  s.name             = 'open_apps_settings_fork'
   s.version          = '0.1.0'
   s.summary          = 'A new Flutter plugin.'
   s.description      = <<-DESC

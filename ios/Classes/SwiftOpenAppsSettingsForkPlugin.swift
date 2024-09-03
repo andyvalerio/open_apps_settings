@@ -1,7 +1,7 @@
 import Flutter
 import UIKit
 
-public class SwiftOpenAppsSettingsPlugin: NSObject, FlutterPlugin {
+public class SwiftOpenAppsSettingsForkPlugin: NSObject, FlutterPlugin {
       var myResult:FlutterResult? = nil
       var isSettingOpen:Bool = false
   public static func register(with registrar: FlutterPluginRegistrar) {
