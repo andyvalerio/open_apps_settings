@@ -30,7 +30,7 @@ flutter:
         package: com.bdrthermea.open_apps_settings
         pluginClass: OpenAppsSettingsPlugin
       ios:
-        pluginClass: OpenAppsSettingsPlugin
+        pluginClass: OpenAppsSettingsForkPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
