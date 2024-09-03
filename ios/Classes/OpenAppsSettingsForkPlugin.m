@@ -1,5 +1,5 @@
 #import "OpenAppsSettingsForkPlugin.h"
-#if __has_include(<open_apps_settings/open_apps_settings_fork-Swift.h>)
+#if __has_include(<open_apps_settings_fork/open_apps_settings_fork-Swift.h>)
 #import <open_apps_settings_fork/open_apps_settings_fork-Swift.h>
 #else
 // Support project import fallback if the generated compatibility header
