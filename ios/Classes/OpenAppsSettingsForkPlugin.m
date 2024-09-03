@@ -10,6 +10,6 @@
 
 @implementation OpenAppsSettingsForkPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [SwiftOpenAppsSettingsPlugin registerWithRegistrar:registrar];
+  [SwiftOpenAppsSettingsForkPlugin registerWithRegistrar:registrar];
 }
 @end
