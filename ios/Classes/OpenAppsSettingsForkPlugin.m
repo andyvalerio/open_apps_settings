@@ -8,7 +8,7 @@
 #import "open_apps_settings_fork-Swift.h"
 #endif
 
-@implementation OpenAppsSettingsPlugin
+@implementation OpenAppsSettingsForkPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
   [SwiftOpenAppsSettingsPlugin registerWithRegistrar:registrar];
 }
