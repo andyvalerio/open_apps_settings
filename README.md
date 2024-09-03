@@ -9,13 +9,13 @@ This fork fixes a bug in the forked repository that caused the plugin to send a 
 Add following dependency in pubspec.yaml file:
 
 ```yaml
-open_apps_settings: ^0.1.0
+open_apps_settings: ^0.2.0
 ```
 
 Install by running:
 
 ```bash
-$ flutter pub get 
+flutter pub get 
 ```
 
 ## Usage
@@ -86,5 +86,3 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-
-
