@@ -9,7 +9,7 @@ This fork fixes a bug in the forked repository that caused the plugin to send a 
 Add following dependency in pubspec.yaml file:
 
 ```yaml
-open_apps_settings: ^0.2.0
+open_apps_settings: ^0.3.0
 ```
 
 Install by running:

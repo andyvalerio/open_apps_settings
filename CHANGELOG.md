@@ -21,3 +21,7 @@
 ## 0.2.0
 
 * Fixed some reference issues in iOS.
+
+## 0.3.0
+
+* Add missing reference.
