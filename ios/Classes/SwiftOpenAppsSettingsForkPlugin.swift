@@ -6,7 +6,7 @@ public class SwiftOpenAppsSettingsForkPlugin: NSObject, FlutterPlugin {
       var isSettingOpen:Bool = false
   public static func register(with registrar: FlutterPluginRegistrar) {
     let channel = FlutterMethodChannel(name: "open_apps_settings", binaryMessenger: registrar.messenger())
-    let instance = SwiftOpenAppsSettingsPlugin()
+    let instance = SwiftOpenAppsSettingsForkPlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
     registrar.addApplicationDelegate(instance)
   }
