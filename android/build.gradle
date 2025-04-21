@@ -3,7 +3,7 @@ version '1.0'
 
 buildscript {
     ext {
-        kotlin_version = '2.0.0'
+        kotlin_version = '2.0.0' // this is fine, just make sure your environment supports it
     }
     repositories {
         google()
@@ -29,18 +29,23 @@ apply plugin: 'org.jetbrains.kotlin.android'
 android {
     namespace = "com.bdrthermea.open_apps_settings"
 
-    defaultConfig {
-        compileSdk 34
-    }
+    compileSdk = 34
 
     defaultConfig {
-        minSdkVersion 16
+        minSdk = 16
     }
-    lintOptions {
-        disable 'InvalidPackage'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
+
     kotlinOptions {
         jvmTarget = '17'
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
     }
 }
 
